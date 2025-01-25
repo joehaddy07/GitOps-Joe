@@ -4,7 +4,7 @@ metadata:
   name: my-jojo
   namespace: argocd
 spec:
-  project: 
+  project: spring-app-demo
   source:
     repoURL: 'https://github.com/joehaddy07/GitOps-Joe.git'
     targetRevision: main
