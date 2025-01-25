@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-app
+  namespace: argocd
+spec:
+  project: spring-app-demo
+  source:
+    repoURL: 'https://github.com/joehaddy07/GitOps-Joe.git'
+    targetRevision: main
+    path: .                     # Points to the root of the repository
+    helm:
+      valueFiles:
+        - values-dev.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: dev 
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
