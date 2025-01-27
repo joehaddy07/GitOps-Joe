@@ -17,3 +17,10 @@ configmap:
     LOG_LEVEL: "info"
     myConfigFileConf: |
       c:\Users\joeha\OneDrive\Documents\primecare-html
+
+secrets:
+  name: helmjoe-secret
+  data:
+    DB_USERNAME: "myuser"
+    DB_PASSWORD: "mypassword"
+    API_KEY: "myapikey"
