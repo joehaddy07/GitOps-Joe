@@ -36,17 +36,3 @@ spec:
             port: 80
           initialDelaySeconds: 15
           periodSeconds: 10
-        volumeMounts:
-        - name: config-volume
-          mountPath: /etc/config
-          readOnly: true
-        - name: secret-volume
-          mountPath: /etc/secrets
-          readOnly: true
-      volumes:
-      - name: config-volume
-        configMap:
-          name: {{ .Values.configmap.name }}
-      - name: secret-volume
-        secret:
-          secretName: {{ .Values.secrets.name }}
