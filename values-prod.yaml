@@ -2,7 +2,7 @@ appName: helmjoe
 
 deployment:
   image: nginx 
-  tag: latest
+  tag: stable-perl
   replicas: 3
 
 service: 
