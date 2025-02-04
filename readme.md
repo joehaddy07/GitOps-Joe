@@ -6,6 +6,13 @@ HOW TO CREATE ARGOCD APPLICATION USING CLI
 
 kubectl create ns dev
 
+TO GET THE ARGOCD PASSWORD:
+===========================
+
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+argocd app logs <IP>
+
 argocd app create my-jojo \
   --repo https://github.com/joehaddy07/GitOps-Joe.git \
   --path . \
